@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Disposable Vapes</h1>
+    <script>
+      let products = [];
+      const uContainer = document.querySelector("#products");
+      fetch("http://localhost:4864/products")
+        .then((response) => response.json())
+        .then((data) => {
+          products = data;
+          console.log(data);
+          showproducts(products);
+        });
+      function showproducts(products) {
+        uContainer.innerHTML = "";
+        products.forEach((product) => {
+          id = product.product_id;
+          uContainer.innerHTML += ~``;
+        });
+      }
+    </script>
+  </body>
+</html>
